@@ -1,0 +1,7 @@
+---
+# tasks file for k8s_slave
+  - name: Copy the join command to server location
+    copy: src=/root/task19/k8s_slave/files/join-command.txt dest=/tmp/join-command.sh mode=0777
+
+  - name: Join the node to cluster
+    command: sh /tmp/join-command.sh
